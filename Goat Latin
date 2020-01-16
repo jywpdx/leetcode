@@ -1,0 +1,48 @@
+  class Solution:
+    def toGoatLatin(self, S: str) -> str:
+        
+        
+        words = S.split()
+            
+        GoatLatin = '' 
+        
+        vowels = {'a','e','i','o','u','A','E','I','O','U'}
+           
+        last = 'a'
+        
+        for word in words:
+            
+            if word[0] in vowels:
+                word = word +'ma'
+                
+            
+            else :
+                word = word[1:] + word[0] +'ma'
+            
+            
+            word = word + last
+            
+            last = last +'a'
+            
+            GoatLatin = GoatLatin + ' ' + word
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+            
+        #GoatLatin = ' '.join(words)
+        
+        return GoatLatin[1:]
+        
+        
+        
+        #题意很清晰，没什么需要讲解的地方。 注意大小写，和字符串拼接的空格问题。 
+        ，
+       
