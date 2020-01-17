@@ -1,0 +1,16 @@
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        
+        
+        ans = 0 
+        
+        for num in nums :
+            
+            if len(str(num)) & 1 == 0 :
+                ans += 1
+        
+        return ans
+        
+        
+        #一个遍历，将数字转为string，检查string的长度是否是偶数
+ 
