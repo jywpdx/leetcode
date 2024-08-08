@@ -1,0 +1,29 @@
+class Solution:
+    def spiralMatrixIII(self, rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:
+        ans = []
+        dirs = [(0,1),(1,0),(0,-1),(-1,0)]
+        steps = 1
+        d = 0 
+        r, c = rStart, cStart 
+        ans.append([r,c])
+
+        while len(ans) < rows * cols :
+            for _ in range(2) :
+                for _ in range(steps):
+                    r += dirs[d][0]
+                    c += dirs[d][1]
+                    if 0 <= r < rows and 0 <= c < cols :
+                        ans.append([r,c])
+                d = (d + 1) % 4 
+            steps += 1
+        return ans 
+        
+
+
+'''
+This problem is a bit tedious. We need to simulate the visit to the entire matrix in a spiral way. 
+
+First start at the given coordinate(rStart, cStart)
+Secondly it keeps changing direction for every viable step(from 1 to n)
+Lastly even if it is out of boundary, it keeps doing but we do not include the coordinates out of boundary
+Return the array
